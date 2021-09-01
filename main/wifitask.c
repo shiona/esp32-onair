@@ -122,6 +122,7 @@ void wifi_worker(void * bogus_param)
             ESP_LOGI(TAG, "connected to ap SSID: %s", WIFI_SSID);
         } else if (bits & WIFI_FAIL_BIT) {
             ESP_LOGI(TAG, "Failed to connect to SSID: %s", WIFI_SSID);
+            state = STATE_ERROR;
         } else {
             ESP_LOGE(TAG, "UNEXPECTED EVENT");
         }
